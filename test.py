@@ -8,6 +8,7 @@ from statistics.fromSys import getDirSize
 from statistics.fromDB import KaoLaStatistics,XmlyStatistics,QtStatistics
 from conf_util import ConfUtil
 from main import Main
+from afterCrawl import getSaveScrapyStatusFromLog
 
 class TestFromLog(unittest.TestCase):
 
@@ -94,6 +95,12 @@ class TestMain(unittest.TestCase):
         res = self.main.runForXMLY()
         print res
         self.main.runOnce()
+
+class TestAfterCrawl(unittest.TestCase):
+    def testGetSaveScrapyStatusFromLog(self):
+        getSaveScrapyStatusFromLog(ConfUtil.getTestLogDir(),ConfUtil.getTestCrawler())
+
+
 
 
 if __name__ == "__main__":

@@ -91,3 +91,15 @@ class ConfUtil:
     @classmethod
     def getXmlyImageDir(cls):
         return cf.get('ximalaya','image_dir')
+
+    @classmethod
+    def getCrawlHistoryCollectionName(cls):
+        return cf.get('statistics_collections','crawl_history')
+
+    @classmethod
+    def getTestLogDir(cls):
+        return cf.get('test','logDir')
+
+    @classmethod
+    def getTestCrawler(cls):
+        return cf.get('test','crawler')
