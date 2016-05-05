@@ -56,6 +56,22 @@ class KaoLaStatistics:
             res.update({item:tmp[item][1]})
         return res
 
+    #获得数据库中有多少期节目
+    def getAlbumCount(self):
+        res = self.getAlbumCountPerCategory()
+        totalCount = 0L
+        for item in res:
+            totalCount += res[item]
+        return totalCount
+
+    #获得数据库中有多少媒体数量
+    def getAudioCount(self):
+        res = self.getAudioCountPerCategory()
+        totalCount = 0L
+        for item in res:
+            totalCount += res[item]
+        return totalCount
+
 class XmlyStatistics:
 
     xmlyAlbum = sDb[ConfUtil.getXMLYAlbumCollectionName()]
@@ -109,6 +125,22 @@ class XmlyStatistics:
             res.update({item:tmp[item][1]})
         return res
 
+    #获得数据库中有多少期节目
+    def getAlbumCount(self):
+        res = self.getAlbumCountPerCategory()
+        totalCount = 0L
+        for item in res:
+            totalCount += res[item]
+        return totalCount
+
+    #获得数据库中有多少媒体数量
+    def getAudioCount(self):
+        res = self.getAudioCountPerCategory()
+        totalCount = 0L
+        for item in res:
+            totalCount += res[item]
+        return totalCount
+
 class QtStatistics:
 
     qtAlbum = sDb[ConfUtil.getQTAlbumCollectionName()]
@@ -160,3 +192,20 @@ class QtStatistics:
         res = defaultdict()
         for item in tmp:
             res.update({item:tmp[item][1]})
+        return res
+
+    #获得数据库中有多少期节目
+    def getAlbumCount(self):
+        res = self.getAlbumCountPerCategory()
+        totalCount = 0L
+        for item in res:
+            totalCount += res[item]
+        return totalCount
+
+    #获得数据库中有多少媒体数量
+    def getAudioCount(self):
+        res = self.getAudioCountPerCategory()
+        totalCount = 0L
+        for item in res:
+            totalCount += res[item]
+        return totalCount
