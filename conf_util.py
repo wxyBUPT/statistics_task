@@ -77,5 +77,17 @@ class ConfUtil:
         return cf.get('spider_collections','qt_audio')
 
     @classmethod
-    def getMediaSizeCollectionName(cls):
-        return cf.get('statistics_collections','media_size')
+    def getStatisticCronPerHourCollection(cls):
+        return cf.get('statistics_collections','media_summary')
+
+    @classmethod
+    def getKLImageDir(cls):
+        return cf.get('kaola','image_dir')
+
+    @classmethod
+    def getQTImageDir(cls):
+        return cf.get('qingting','image_dir')
+
+    @classmethod
+    def getXmlyImageDir(cls):
+        return cf.get('ximalaya','image_dir')
