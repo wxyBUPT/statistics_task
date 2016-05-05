@@ -7,6 +7,7 @@ from statistics.fromLog import getScrapyStatusFromScrapyLog
 from statistics.fromSys import getDirSize
 from statistics.fromDB import KaoLaStatistics,XmlyStatistics,QtStatistics
 from conf_util import ConfUtil
+from main import Main
 
 class TestFromLog(unittest.TestCase):
 
@@ -52,6 +53,14 @@ class TestFromDB(unittest.TestCase):
         for key in res:
             print key,res[key]
 
+    def testGetAlbumCount(self):
+        res = self.kl.getAlbumCount()
+        print u'kl 节目的总期数为',res
+
+    def testGetAudioCount(self):
+        res = self.kl.getAudioCount()
+        print u'kl 中音频总数量为',res
+
     def testXGetAlbum_AudioCountPerCategory(self):
         res = self.xmly._getAlbum_AudioCountPerCategory()
         for item in res:
@@ -74,6 +83,17 @@ class TestFromDB(unittest.TestCase):
         print u'下面为qt中对应的个数'
         for key in res:
             print key ,res[key]
+
+class TestMain(unittest.TestCase):
+    main = Main()
+    def testRunForKL(self):
+        res = self.main.runForKL()
+        print res
+        res = self.main.runForQt()
+        print res
+        res = self.main.runForXMLY()
+        print res
+        self.main.runOnce()
 
 
 if __name__ == "__main__":
