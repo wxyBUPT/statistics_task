@@ -31,7 +31,7 @@ class KaoLaStatistics:
                 }
             ]
         )
-        for item in cursor:
+        for item in cursor['result']:
             res.update({item['_id']:[item['totalAlbum'],item['totalAudio']]})
         self.perCategoryRes = res
         return res
@@ -100,7 +100,7 @@ class XmlyStatistics:
                 }
             ]
         )
-        for item in cursor:
+        for item in cursor['result']:
             res.update({item['_id'].lstrip(u'【').rstrip(u'】'):[item['totalAlbum'],item['totalAudio']]})
         self.perCategoryRes = res
         return res
@@ -169,7 +169,7 @@ class QtStatistics:
                 }
             ]
         )
-        for item in cursor:
+        for item in cursor['result']:
             res[item['_id']] = [item['totalAlbum'],item['totalAudio']]
         self.perCategoryRes = res
         return res

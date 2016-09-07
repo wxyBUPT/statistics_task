@@ -4,8 +4,6 @@ __author__ = 'xiyuanbupt'
 from collections import defaultdict,Counter
 
 from pymongo import MongoClient
-import logging
-import logging.config
 
 from conf_util import ConfUtil
 from statistics.fromDB import KaoLaStatistics,XmlyStatistics,QtStatistics
